@@ -46,86 +46,133 @@
 
         <div class="row">
             <div class="location">
-                <img src="bush.jpg" alt="Search location 1"> 
+                <img id="bush1" onclick="check(0)" src="bush.jpg" alt="Search location 1"> 
              </div>
              <div class="location">
-                 <img src="bush.jpg" alt="Search location 2">
+                 <img id="bush2" onclick="check(1)" src="bush.jpg" alt="Search location 2">
              </div>
              <div class="location">
-                 <img src="bush.jpg" alt="Search location 3">
+                 <img id="bush3" onclick="check(2)" src="bush.jpg" alt="Search location 3">
              </div>
              <div class="location">
-                 <img src="bush.jpg" alt="Search location 4">
+                 <img id="bush4" onclick="check(3)" src="bush.jpg" alt="Search location 4">
              </div>
              <div class="location">
-                 <img src="bush.jpg" alt="Search location 5">
+                 <img id="bush5" onclick="check(4)" src="bush.jpg" alt="Search location 5">
              </div>
              <div class="location">
-                 <img src="bush.jpg" alt="Search location 6">
+                 <img id="bush6" onclick="check(5)" src="bush.jpg" alt="Search location 6">
              </div>
         </div>
 
         <div class="row">
             <div class="location">
-                <img src="Mouse.webp" alt="Search location 1"> 
+                <img id="mouse1" onclick="check(6)" src="bush.jpg" alt="Search location 1"> 
              </div>
              <div class="location">
-                 <img src="Mouse.webp" alt="Search location 2">
+                 <img id="mouse2" onclick="check(7)" src="bush.jpg" alt="Search location 2">
              </div>
              <div class="location">
-                 <img src="Mouse.webp" alt="Search location 3">
+                 <img id="mouse3" onclick="check(8)" src="bush.jpg" alt="Search location 3">
              </div>
              <div class="location">
-                 <img src="Mouse.webp" alt="Search location 4">
+                 <img id="mouse4" onclick="check(9)" src="bush.jpg" alt="Search location 4">
              </div>
              <div class="location">
-                 <img src="Mouse.webp" alt="Search location 5">
+                 <img id="mouse5" onclick="check(10)" src="bush.jpg" alt="Search location 5">
              </div>
              <div class="location">
-                 <img src="Mouse.webp" alt="Search location 6">
+                 <img id="mouse6" onclick="check(11)" src="bush.jpg" alt="Search location 6">
              </div>
         </div>
 
         <div class="row">
             <div class="location">
-                <img src="tiger.jpg" alt="Search location 1"> 
+                <img id="tiger1" onclick="check(12)" src="bush.jpg" alt="Search location 1"> 
              </div>
              <div class="location">
-                 <img src="tiger.jpg" alt="Search location 2">
+                 <img id="tiger2" onclick="check(13)" src="bush.jpg" alt="Search location 2">
              </div>
              <div class="location">
-                 <img src="tiger.jpg" alt="Search location 3">
+                 <img id="tiger3" onclick="check(14)" src="bush.jpg" alt="Search location 3">
              </div>
              <div class="location">
-                 <img src="tiger.jpg" alt="Search location 4">
+                 <img id="tiger4" onclick="check(15)" src="bush.jpg" alt="Search location 4">
              </div>
              <div class="location">
-                 <img src="tiger.jpg" alt="Search location 5">
+                 <img id="tiger5" onclick="check(16)" src="bush.jpg" alt="Search location 5">
              </div>
              <div class="location">
-                 <img src="tiger.jpg" alt="Search location 6">
+                 <img id="tiger6" onclick="check(17)" src="bush.jpg" alt="Search location 6">
              </div>
         </div>
 
         <div class="row">
             <div class="location">
-                <img src="grass.jpg" alt="Search location 1"> 
+                <img id="grass1" onclick="check(18)" src="bush.jpg" alt="Search location 1"> 
              </div>
              <div class="location">
-                 <img src="grass.jpg" alt="Search location 2">
+                 <img id="grass2" onclick="check(19)" src="bush.jpg" alt="Search location 2">
              </div>
              <div class="location">
-                 <img src="grass.jpg" alt="Search location 3">
+                 <img id="grass3" onclick="check(20)" src="bush.jpg" alt="Search location 3">
              </div>
              <div class="location">
-                 <img src="grass.jpg" alt="Search location 4">
+                 <img id="grass4" onclick="check(21)" src="bush.jpg" alt="Search location 4">
              </div>
              <div class="location">
-                 <img src="grass.jpg" alt="Search location 5">
+                 <img id="grass5" onclick="check(22)" src="bush.jpg" alt="Search location 5">
              </div>
              <div class="location">
-                 <img src="grass.jpg" alt="Search location 6">
+                 <img id="grass6" onclick="check(23)" src="bush.jpg" alt="Search location 6">
              </div>
         </div>
+
+        <!--<script>
+            ids = ["bush1", "bush2", "bush3", "bush4", "bush5", "bush6", "mouse1", "mouse2", "mouse3", "mouse4", "mouse5", "mouse6", "tiger1", "tiger2", "tiger3", "tiger4", "tiger5", "tiger6", "grass1", "grass2", "grass3", "grass4", "grass5","grass6"]
+            checkCount = zero
+            penalty = zero
+            lastCheck = 0
+            mouseLocation = 13
+            catLocation = 21
+            gameOver = false
+
+            function check(position){
+                if (gameOver) {
+                    return
+                }
+                id = ids[position]
+                image = document.getElementById(id)
+
+                if (position == mouseLocation){
+                    image.src = "mouse image"
+                } else if (position == catLocation){
+                    image.src = "cat image"
+                } else {
+                    image.src = "grass image"
+                }
+                checkCount++
+                penalty++
+
+                bushesElement = getElementById("bushes")
+
+                if (position == mouseLocation){
+                    gameOver = true
+                    penalty -= 3
+                }
+
+                if (position == catLocation){
+                    gameOver = true
+                    penalty += 4
+                }
+
+                penaltyElement = getElementById("penalty")
+
+                lastCheck = position
+
+                }
+
+            
+        </script>-->
     </body>
 </html>
