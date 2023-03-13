@@ -39,9 +39,9 @@
     <body>
         <h1>Find the mouse by Nicolas Black</h1>
         <div>Click on the bushes to search for the mouse, beware the cat</div>
-        <div id="bushes">Number of bushes checked is zero</div>
-        <div id="penalty">Penalty is zero</div>
-        <div>Click for help</div>
+        <div id="bushes">Number of bushes checked is</div>
+        <div id="penalty">Penalty is</div>
+        <div onclick = help()>Click for help</div>
         <div id="help">Help report</div>
 
         <div class="row">
@@ -130,63 +130,62 @@
 
         <script>
             var ids = ["bush1", "bush2", "bush3", "bush4", "bush5", "bush6", "bush7", "bush8", "bush9", "bush10", "bush11", "bush12", "bush13", "bush14", "bush15", "bush16", "bush17", "bush18", "bush19", "bush20", "bush21", "bush22", "bush23","bush24"]
-            var checkCount = zero
-            var penalty = zero
+            var checkCount = 0
+            var penalty = 0
             var lastCheck = 0
-            var mouseLocation = 21
-            var catLocation = 13
+            var mouseLocation = 13
+            var catLocation = 21
             var gameOver = false
 
             function check(position){
-                if (gameOver) {
-                    return
+
+                    if(!gameOver){
+                
+                    if(position == mouseLocation){
+                        document.getElementById(ids[position]).src= "Mouse.webp"
+                        checkCount += 1
+                        penalty -= 3
+                        gameOver=true
+
+                        
+                    
+                    }
+                    else if (position == catLocation){
+                        document.getElementById(ids[position]).src= "tiger.jpg"
+                        checkCount += 1
+                        penalty += 4
+                        gameOver=true
+                    }
+                    else {
+                        document.getElementById(ids[position]).src= "grass.jpg"
+                        penalty+=1
+                        checkCount += 1
+                    }
+                    document.getElementById("penalty").innerHTML = "Penalty is " + penalty
+                    document.getElementById("bushes").innerHTML = "Number of bushes checked is " + checkCount
+
+
                 }
-                id = ids[position]
-                image = document.getElementById(id)
+                
 
-                if (position == mouseLocation){
-                    image.src = "Mouse.webp"
-                } else if (position == catLocation){
-                    image.src = "tiger.jpg"
-                } else {
-                    image.src = "grass.jpg"
-                }
-                checkCount++
-                penalty++
-
-
-
-                bushesElement = getElementById(ids[position]).src = "bush.jpg"
-
-                if (position == mouseLocation){
-                    gameOver = true
-                    penalty -= 3
-                }
-
-                if (position == catLocation){
-                    gameOver = true
-                    penalty += 4
-                }
-
-                penaltyElement = getElementById(ids[position]).src = "grass.jpg"
-                document.getElementById("penalty").innerHTML = "Penalty is " + penalty
+                
 
                 lastCheck = position
 
                 }
 
             function help(){
-                var row = parseInt(lastCheck / 4) - 1
+                var row = Math.floor(lastCheck / 6) 
                 var column = lastCheck % 6
                 var catCol = catLocation % 6
-                var catRow = parseInt(catLocation / 4) - 1
+                var catRow = Math.floor(catLocation / 6) 
                 var mouseCol = mouseLocation % 6
-                var mouseRow = parseInt(mouseLocation / 4) - 1
+                var mouseRow = Math.floor(mouseLocation / 6) 
 
-                if ((Math.abs(catRow - row) <= 1) && (Math.abs(catCol - colum) <= 1)){
+                if ((Math.abs(catRow - row) <= 1) && (Math.abs(catCol - column) <= 1)){
                     document.getElementById("help").innerHTML = "Help report: meow"
                 }
-                else if ((Math.abs(mouseRow - row) <= 1) && (Math.abs(mouseCol - colum) <= 1)){
+                else if ((Math.abs(mouseRow - row) <= 1) && (Math.abs(mouseCol - column) <= 1)){
                     document.getElementById("help").innerHTML = "Help report: squeak"
                 }
                 else {
