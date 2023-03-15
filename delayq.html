@@ -30,7 +30,7 @@
 		<div class="flex-container" id="target">
 		  <div class="delayQ">row item 1</div>   
 		  <div class="delayQ">row item 2</div>  
-		  <div class="delayQ">row item 3</div>  
+		  <div class="delayQ">row item 3</div>
 		</div>
 	
 	<p> Press the button to create an new element of type div and then add it to the container.
@@ -55,23 +55,30 @@
 
 	}
 	function get(){
-		const queueItems = [getElementsByClassname("delayQ")]
-		arrayLength = queueItems.arrayLength
-		if(arrayLength > 0){
-			queueItems.remove(0)
+		const queueItems = document.getElementsByClassName("delayQ")
+		arrLength = queueItems.length
+		if(arrLength > 0){
+			queueItems[0].remove();
 		}
 	}
 
 	function delay(){
-		const queueItems = [getElementsByClassname("delayQ")]
-		arrayLength = queueItems.arrayLength
-		if(arrayLength == 0 || arrayLength == 1){
-			return
+		const queueItems = document.getElementsByClassName("delayQ")
+		arrLength = queueItems.length
+		if(arrLength == 0 || arrLength == 1){
+			return 
 		}
 		else{
-			var removedItem = queueItems.remove(0)
+			var removedItem = queueItems[0]
+			
+			console.log(removedItem);
+			queueItems[0].remove()
+	var container = document.getElementById('target')
+			container.appendChild(removedItem)
 		}
 	}
+
+
 		
 </script>
 </html>	
