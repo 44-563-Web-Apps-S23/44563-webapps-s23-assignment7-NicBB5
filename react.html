@@ -32,12 +32,24 @@
   }
 
   function startTime() {
-    for(var i = 0; i < 9; i++){
+    for(let i = 0; i < 9; i++){
       setTimeout(function(){
-        var countdownElement = document.getElementById("target")
-        countdownElement.innerHTML = i
+        document.getElementById("counter").innerHTML = i
       }, (8 - i) * 1000)
+
+      /* document.getElementbyId("counter").innerHTML = i */
+
     }
+    setTimeout(function(){
+      if (reactTime === undefined){
+        document.getElementById("target").innerHTML = "Too Slow"
+      }
+      else {
+        var endTime = Date.now()
+        difference = endTime - reactTime
+        document.getElementById("target").innerHTML = "Time was " + difference + " ms"
+      }
+    }, 8000)
   }
   </script>
 
